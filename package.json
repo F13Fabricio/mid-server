@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/F13Fabricio/mid-server#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^1.7.0",
