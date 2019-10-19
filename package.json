@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app/server.js",
+    "reset": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "dev": "nodemon src/app/server.js --ignore __tests__",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,9 +21,12 @@
   "homepage": "https://github.com/F13Fabricio/mid-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.21.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "sequelize-cli": "^5.5.1"
   }
 }
