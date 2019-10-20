@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const routes = require('./routes');
 const routeNotFound = require('./middlewares/routeNotFound.middleware');
@@ -16,6 +17,7 @@ class App {
   middleweres() {
     this.express.use(cors({ origin: true }));
     this.express.use(express.json());
+    this.express.use(morgan('dev'));
   }
 
   routes() {
