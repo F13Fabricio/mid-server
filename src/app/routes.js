@@ -15,5 +15,7 @@ routes.post('/login', usersController.login);
 routes.post('/users/:userId/places', authorize, multer, placesController.create);
 routes.get('/places', placesController.index);
 routes.get('/places/:placeId', placesController.show);
+routes.put('/places/:placeId', authorize, placesController.update);
+routes.delete('/places/:placeId', authorize, placesController.delete);
 
 module.exports = routes;

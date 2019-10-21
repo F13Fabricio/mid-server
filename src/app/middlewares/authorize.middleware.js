@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
       token = token.slice(7, token.length);
       let decoded = decodeToken(token);
       if (req.params.userId && req.params.userId != decoded.userId) {
-        return res.status(401).send({ message: 'Unauthorized.' });
+        return res.status(403).send({ message: 'Unauthorized.' });
       }
       
       req.decodedToken = decoded;
