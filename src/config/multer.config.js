@@ -35,12 +35,8 @@ const filename = (req, file, cb) => {
 }
 
 const s3 = multerS3({
-  s3: new aws.S3({
-    accessKeyId: '<ACCESS_KEY_ID>',
-    secretAccessKey: '<SECRET_ACCESS_KEY>',
-    region: '<REGION>'
-  }),
-  bucket: 'mid-project',
+  s3: new aws.S3(),
+  bucket: process.env.BUCKET,
   contentType: multerS3.AUTO_CONTENT_TYPE,
   acl: 'public-read',
   key: filename,
