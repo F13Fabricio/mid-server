@@ -20,8 +20,9 @@ class PlacesController {
       }
 
       const name = req.body.name;
+      const { location: imageUrl = '' } = req.file;
       const place = await Place.create({
-        name, UserId, imageUrl: req.file.path, numberOfVotes: 0
+        name, UserId, imageUrl, numberOfVotes: 0
       });
 
       return res.status(201).send({ data: place });

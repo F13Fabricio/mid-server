@@ -8,6 +8,7 @@ const vote = async (placeId) => {
     }
 
     await place.vote();
+    console.log(`Voted for "${place.name}!"`);
   } catch (error) {
     console.log(error);
   }

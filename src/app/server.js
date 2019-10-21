@@ -9,8 +9,6 @@ server.listen(process.env.PORT || 3000, () => {
 });
 
 io.on('connection', (socket) => {
-  console.log('Socket connected:', socket.id);
-
   socket.on('votation', async (msg) => {
     await vote(msg.placeId);
     socket.broadcast.emit('votation', msg);
