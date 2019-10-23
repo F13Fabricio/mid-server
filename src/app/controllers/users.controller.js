@@ -36,7 +36,7 @@ class UsersController {
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ where: { email }});
-      if (!user || (user && !user.checkPassword(password))) {
+      if (!user || (user && ! await (user.checkPassword(password)))) {
         return res.status(403).send({ message: 'Incorrect email or password.' });
       }
 
